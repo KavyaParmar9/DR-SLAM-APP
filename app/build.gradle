@@ -1,0 +1,77 @@
+// C:/Users/Admin/Downloads/Autonomous Project/app/build.gradle
+
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+    namespace = "com.example.smartnav"
+    compileSdk = 36
+    
+    defaultConfig {
+        applicationId = "com.example.smartnav"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+    
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+// C:/Users/Admin/Downloads/Autonomous Project/app/build.gradle
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // SceneView Dependencies
+    implementation("io.github.sceneview:sceneview:2.3.1")
+    implementation("io.github.sceneview:arsceneview:2.3.1")
+
+    // ViewModel and LiveData
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.fragment:fragment-ktx:1.7.0")
+
+    // OpenCV for ORB-SLAM - Note: Requires OpenCV Manager or static libs
+    // For now, we'll use a compatible version
+    // You may need to download OpenCV Android SDK and add manually if this doesn't work
+    // implementation("org.opencv:opencv-android:4.8.0")
+    
+    // Alternative: Use OpenCV Java bindings (simpler but less efficient)
+    // We'll implement a version that works with or without OpenCV
+
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
