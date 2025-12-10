@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sky Blue color palette -->
+    <color name="colorPrimary">#03A9F4</color> <!-- Light Blue -->
+    <color name="colorPrimaryDark">#0288D1</color> <!-- Darker Blue -->
+    <color name="colorAccent">#FFD740</color> <!-- Amber -->
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+
+    <color name="windowBackground">#E3F2FD</color> <!-- Lightest Blue -->
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Path colors -->
+    <color name="dr_path">#0D47A1</color> <!-- Dark Blue -->
+    <color name="slam_path">#B71C1C</color> <!-- Dark Red -->
+</resources>
