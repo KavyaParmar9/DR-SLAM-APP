@@ -1,1 +1,118 @@
+🧭 SmartNav: An Indoor Navigation Demonstrator
+
+SmartNav is an educational Android application designed to demonstrate and compare two fundamental indoor navigation techniques:
+
+Dead Reckoning (DR)
+
+Simultaneous Localization and Mapping (SLAM)
+
+Since GPS performs poorly indoors, SmartNav showcases how these alternative methods can be used to track user movement inside buildings.
+
+The application is built entirely in Kotlin and serves as a hands-on demonstration of sensor fusion and computer vision concepts, making it ideal for students and developers interested in robotics, navigation, and AR-based systems.
+
+📌 Core Concepts Explained
+
+SmartNav visualizes the difference between navigation with and without external visual references.
+
+🚶 Dead Reckoning (DR)
+
+Dead Reckoning estimates the current position using a known starting point and incrementally updates it based on movement data such as direction and distance traveled.
+
+🔍 Analogy
+
+Imagine walking in a dark room:
+
+You know where you started.
+
+You count your steps and turns.
+
+Over time, small errors in step length or direction accumulate, causing your estimated position to drift.
+
+This accumulated error is known as sensor drift.
+
+🧠 Implementation in SmartNav
+
+Implemented in DeadReckoningEngine.kt, the DR system uses:
+
+Accelerometer → Detects steps via rhythmic force spikes.
+
+Orientation Sensors → Determines heading using sensor fusion.
+
+Fixed Step Length → Each detected step moves the user forward by a constant distance (e.g., 0.75 m).
+
+This approach is a classic Pedestrian Dead Reckoning (PDR) method.
+
+🗺️ Simultaneous Localization and Mapping (SLAM)
+
+SLAM allows a device to build a map of an unknown environment while tracking its own position within that map at the same time.
+
+🔍 Analogy
+
+Imagine exploring a cave while sketching landmarks:
+
+You draw distinctive features as you see them.
+
+When you revisit a landmark, you refine both your map and your position.
+
+Localization and mapping happen simultaneously.
+
+🧠 Implementation in SmartNav
+
+Implemented in OrbSlamTracker.kt, the SLAM system:
+
+Uses the camera to detect visual features (ORB keypoints).
+
+Matches features between consecutive frames to estimate motion.
+
+Stores features as MapPoint objects to build a sparse 3D map.
+
+Relies heavily on ARCore, which provides high-accuracy visual-inertial odometry.
+
+ARCore acts as the primary source of truth, ensuring a stable and accurate SLAM trajectory.
+
+⚙️ How SmartNav Works
+
+Both Dead Reckoning and SLAM trackers run simultaneously.
+
+Their estimated paths are plotted on the screen in real time.
+
+Over time:
+
+The SLAM trajectory remains accurate.
+
+The Dead Reckoning path drifts, clearly demonstrating cumulative sensor error.
+
+This side-by-side visualization provides a powerful demonstration of why SLAM is essential for long-term indoor navigation.
+
+🛠️ Technologies Used
+
+Kotlin – 100% Kotlin codebase.
+
+Android Jetpack – ViewModel, LiveData, Fragments.
+
+ARCore – Visual-inertial SLAM and environment understanding.
+
+SceneView (ARSceneView) – Simplifies ARCore session handling and rendering.
+
+🌍 Real-World Use Cases
+
+Although SmartNav is a demonstration app, the underlying technology applies to:
+
+🏢 Indoor Navigation – Airports, malls, campuses.
+
+🏭 Industrial Logistics – Factory floors, warehouses.
+
+🚒 Emergency Response – Navigation in low-visibility environments.
+
+🎮 Augmented Reality – Persistent placement of virtual objects.
+
+📱 Device Compatibility
+
+⚠️ ARCore support is mandatory
+
+This application requires an ARCore-compatible Android device.
+ARCore is essential for SLAM functionality.
+
+📄 Supported devices list:
+https://developers.google.com/ar/devices
 
