@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DAR</string>
+    <string name="start_tracking">Start Tracking</string>
+    <string name="stop_tracking">Stop Tracking</string>
+    <string name="reset">Reset</string>
+    <string name="save_session">Save Session</string>
+    <string name="load_session">Load Last Session</string>
+    <string name="dr_pose_label">Dead Reckoning</string>
+    <string name="slam_pose_label">SLAM</string>
+    <string name="drift_label">Drift</string>
+    <string name="title_home">Home</string>
+    <string name="title_slam">SLAM</string>
+    <string name="title_map">Map</string>
+</resources>
